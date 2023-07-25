@@ -31,17 +31,17 @@ app.use("/api/v1/auth", userRoutes);
 app.use("/api/v1/social", socialRoutes);
 app.use("/api/v1/profile", profileRoutes);
 
-// app.get("/", (req, res) => {
-//   res.send("<h1>hello</h1>");
-// });
+app.get("/", (req, res) => {
+  res.send("<h1>hello</h1>");
+});
 
-if(process.env.NODE_ENV == "production"){
-  const path = require("path") ; 
-  app.get("/" , (req , res) => {
-    app.use(express.static(path.resolve(__dirname, "client" , 'dist' )))
-    res.sendFile(path.resolve(__dirname, "client" , 'dist' , 'index.html' ));
-  })
-}
+// if(process.env.NODE_ENV == "production"){
+//   const path = require("path") ; 
+//   app.get("/" , (req , res) => {
+//     app.use(express.static(path.resolve(__dirname, "client" , 'dist' )))
+//     res.sendFile(path.resolve(__dirname, "client" , 'dist' , 'index.html' ));
+//   })
+// }
 
 app.listen(PORT, (req, res) => {
   console.log("APP IS LISTING TO", PORT);
