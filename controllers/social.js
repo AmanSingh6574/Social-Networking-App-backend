@@ -6,7 +6,7 @@ const { uploadImageToCloudinary } = require("../utils/ImageUploader");
 exports.addPost = async (req, res) => {
   try {
     let { description, tags } = req.body;
-    cconst file = req.files?.file || null;
+    const file = req.files?.file || null;
     const userId = req.user.id;
     // console.log(file)
 
